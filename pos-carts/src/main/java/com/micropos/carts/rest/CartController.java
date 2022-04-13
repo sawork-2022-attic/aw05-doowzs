@@ -1,11 +1,11 @@
 package com.micropos.carts.rest;
 
+import com.micropos.carts.api.CartsApi;
+import com.micropos.carts.dto.CartDto;
+import com.micropos.carts.dto.CheckoutDto;
 import com.micropos.carts.mapper.CartMapper;
 import com.micropos.carts.model.Cart;
 import com.micropos.carts.service.CartService;
-import com.micropos.products.api.CartsApi;
-import com.micropos.products.dto.CartDto;
-import com.micropos.products.dto.CheckoutDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -30,7 +30,6 @@ public class CartController implements CartsApi {
     @Override
     public ResponseEntity<CartDto> getCart() {
         Cart cart = cartService.getCart();
-        logger.info(cart.toString());
         return new ResponseEntity<>(cartMapper.toCartDto(cart), HttpStatus.OK);
     }
 

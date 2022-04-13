@@ -1,7 +1,7 @@
 package com.micropos.carts.mapper;
 
 import com.micropos.carts.model.Product;
-import com.micropos.products.dto.ProductDto;
+import com.micropos.carts.dto.ProductDto;
 import org.mapstruct.Mapper;
 
 @Mapper

@@ -24,7 +24,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
-  /carts/items:
+  /carts/items/{productId}:
     post:
       summary: Add item to cart
       operationId: addItem
@@ -32,7 +32,7 @@ paths:
         - cart
       parameters:
         - name: productId
-          in: query
+          in: path
           required: true
           description: ID of product to add
           schema:
@@ -63,7 +63,7 @@ paths:
         - cart
       parameters:
         - name: productId
-          in: query
+          in: path
           required: true
           description: ID of product to add
           schema:
@@ -128,7 +128,7 @@ components:
       properties:
         product:
           $ref: "#/components/schemas/Product"
-        amount:
+        quantity:
           type: integer
     Checkout:
       type: object

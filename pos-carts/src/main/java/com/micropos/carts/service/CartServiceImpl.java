@@ -27,7 +27,8 @@ public class CartServiceImpl implements CartService {
     @Override
     public Cart addItem(String productId, int amount) {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<Product> productResponse = restTemplate.getForEntity("/products/" + productId, Product.class);
+        ResponseEntity<Product> productResponse = restTemplate
+                .getForEntity("http://localhost:8080/api/products/" + productId, Product.class);
         cart.addItem(new Item(productResponse.getBody(), amount));
         return cart;
     }

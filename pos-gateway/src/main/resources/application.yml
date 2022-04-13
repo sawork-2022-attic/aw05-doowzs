@@ -18,3 +18,15 @@ spring:
           uri: lb://carts
           predicates:
             - Path=/api/carts/**
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowCredentials: true
+            allowedOrigins: "http://localhost:3000"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - DELETE
