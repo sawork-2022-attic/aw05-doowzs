@@ -1,11 +1,11 @@
 openapi: "3.0.0"
 info:
   version: 1.0.0
-  title: Products
+  title: Carts
   license:
     name: MIT
 paths:
-  /cart:
+  /carts:
     get:
       summary: Get cart
       operationId: getCart
@@ -24,7 +24,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
-  /cart/item:
+  /carts/items:
     post:
       summary: Add item to cart
       operationId: addItem
@@ -81,7 +81,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
-  /cart/checkout:
+  /carts/checkout:
     post:
       summary: Checkout and clear cart
       operationId: checkout
@@ -122,7 +122,14 @@ components:
         items:
           type: array
           items:
-            $ref: "#/components/schemas/Product"
+            $ref: "#/components/schemas/Item"
+    Item:
+      type: object
+      properties:
+        product:
+          $ref: "#/components/schemas/Product"
+        amount:
+          type: integer
     Checkout:
       type: object
       properties:

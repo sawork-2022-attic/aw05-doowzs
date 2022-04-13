@@ -18,6 +18,9 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public Cart getCart() {
+        if (cart == null) {
+            cart = new Cart();
+        }
         return cart;
     }
 
