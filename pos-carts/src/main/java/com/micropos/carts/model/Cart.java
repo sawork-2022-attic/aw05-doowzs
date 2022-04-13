@@ -14,6 +14,14 @@ public class Cart implements Serializable {
 
     private List<Item> items = new ArrayList<>();
 
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
     public boolean addItem(Item item) {
         return items.add(item);
     }
