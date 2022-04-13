@@ -8,7 +8,6 @@ export const CartItem = ({
   item: Item;
   remove: () => void;
 }) => {
-  console.log(item);
   return (
     <>
       <Box>

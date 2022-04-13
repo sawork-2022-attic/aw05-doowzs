@@ -1,4 +1,4 @@
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box, Button, Image, Text } from "@chakra-ui/react";
 import { Product } from "./types";
 
 export const ProductInfo = ({
@@ -10,11 +10,12 @@ export const ProductInfo = ({
 }) => {
   return (
     <>
-      <Box my={3}>
+      <Box my={4}>
         <Text>{product.name}</Text>
-        <Button onClick={add}>
-          Add
-        </Button>
+        <Box display="flex">
+          <Image src={product.image} height={20} />
+          <Button onClick={add}>Add</Button>
+        </Box>
       </Box>
     </>
   );
